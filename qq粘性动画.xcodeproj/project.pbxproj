@@ -16,6 +16,7 @@
 		091B57A81C74393900BC616D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091B57A61C74393900BC616D /* LaunchScreen.storyboard */; };
 		091B57B31C74393A00BC616D /* qq____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 091B57B21C74393A00BC616D /* qq____Tests.m */; };
 		091B57BE1C74393A00BC616D /* qq____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 091B57BD1C74393A00BC616D /* qq____UITests.m */; };
+		091B57CD1C743AAA00BC616D /* ZYGooView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091B57CC1C743AAA00BC616D /* ZYGooView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		091B57B91C74393A00BC616D /* qq粘性动画UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "qq粘性动画UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		091B57BD1C74393A00BC616D /* qq____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "qq____UITests.m"; sourceTree = "<group>"; };
 		091B57BF1C74393A00BC616D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091B57CB1C743AAA00BC616D /* ZYGooView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYGooView.h; sourceTree = "<group>"; };
+		091B57CC1C743AAA00BC616D /* ZYGooView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYGooView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				091B579B1C74393900BC616D /* ViewController.h */,
 				091B579C1C74393900BC616D /* ViewController.m */,
 				091B579E1C74393900BC616D /* Main.storyboard */,
+				091B57CB1C743AAA00BC616D /* ZYGooView.h */,
+				091B57CC1C743AAA00BC616D /* ZYGooView.m */,
 				091B57A41C74393900BC616D /* Assets.xcassets */,
 				091B57A61C74393900BC616D /* LaunchScreen.storyboard */,
 				091B57A91C74393900BC616D /* Info.plist */,
@@ -205,6 +210,7 @@
 		091B578A1C74393900BC616D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZY;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "王志盼";
 				TargetAttributes = {
@@ -274,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				091B579D1C74393900BC616D /* ViewController.m in Sources */,
+				091B57CD1C743AAA00BC616D /* ZYGooView.m in Sources */,
 				091B57A31C74393900BC616D /* qq____.xcdatamodeld in Sources */,
 				091B579A1C74393900BC616D /* AppDelegate.m in Sources */,
 				091B57971C74393900BC616D /* main.m in Sources */,
