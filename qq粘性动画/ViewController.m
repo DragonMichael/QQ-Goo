@@ -44,5 +44,6 @@
 - (void)dealloc
 {
     [self.timer invalidate];
+    self.timer = nil;
 }
 @end
