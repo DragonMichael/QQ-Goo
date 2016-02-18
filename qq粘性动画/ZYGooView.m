@@ -171,52 +171,47 @@
 
 - (UIBezierPath *)pathWithBigCircleView:(UIView *)bigCircleView smallCircleView:(UIView *)smallCircleView
 {
-    
-    CGPoint bigCenter = bigCircleView.center;
-    CGFloat x2 = bigCenter.x;
-    CGFloat y2 = bigCenter.y;
-    CGFloat r2 = bigCircleView.bounds.size.width / 2;
-    
-    CGPoint smallCenter = smallCircleView.center;
-    CGFloat x1 = smallCenter.x;
-    CGFloat y1 = smallCenter.y;
+    CGPoint smallCircleCenter = smallCircleView.center;
+    CGFloat x1 = smallCircleCenter.x;
+    CGFloat y1 = smallCircleCenter.y;
     CGFloat r1 = smallCircleView.bounds.size.width / 2;
     
+    CGPoint BigCircleViewCenter = bigCircleView.center;
+    CGFloat x2 = BigCircleViewCenter.x;
+    CGFloat y2 = BigCircleViewCenter.y;
+    CGFloat r2 = bigCircleView.bounds.size.width / 2;
     
-    
-    // 获取圆心距离
-    CGFloat d = [self distanceWithPointA:bigCenter pointB:smallCenter];
+    CGFloat d = [self distanceWithPointA:BigCircleViewCenter pointB:smallCircleCenter];
     
     //Θ:(xita)
     CGFloat sinθ = (x2 - x1) / d;
     
     CGFloat cosθ = (y2 - y1) / d;
     
-    // 坐标系基于父控件
     CGPoint pointA = CGPointMake(x1 - r1 * cosθ , y1 + r1 * sinθ);
     CGPoint pointB = CGPointMake(x1 + r1 * cosθ , y1 - r1 * sinθ);
     CGPoint pointC = CGPointMake(x2 + r2 * cosθ , y2 - r2 * sinθ);
     CGPoint pointD = CGPointMake(x2 - r2 * cosθ , y2 + r2 * sinθ);
+    
     CGPoint pointO = CGPointMake(pointA.x + d / 2 * sinθ , pointA.y + d / 2 * cosθ);
     CGPoint pointP =  CGPointMake(pointB.x + d / 2 * sinθ , pointB.y + d / 2 * cosθ);
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     
-    // A
-    [path moveToPoint:pointA];
+    // D
+    [path moveToPoint:pointD];
+    
+    // DA
+    [path addQuadCurveToPoint:pointA controlPoint:pointO];
     
     // AB
     [path addLineToPoint:pointB];
     
-    // 绘制BC曲线
+    // BC
     [path addQuadCurveToPoint:pointC controlPoint:pointP];
-    
     
     // CD
     [path addLineToPoint:pointD];
-    
-    // 绘制DA曲线
-    [path addQuadCurveToPoint:pointA controlPoint:pointO];
     
     return path;
 }
