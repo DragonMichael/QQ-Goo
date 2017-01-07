@@ -7,11 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "ZYGooView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, assign) int count;
+
+@property (nonatomic, strong) ZYGooView *gooView;
 @end
 
 @implementation ViewController
@@ -21,6 +24,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.gooView = [[ZYGooView alloc] initWithFrame:CGRectMake(100, 100, 30, 30)];
+    self.gooView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.gooView];
     
 //    [self setupTimer];
 }

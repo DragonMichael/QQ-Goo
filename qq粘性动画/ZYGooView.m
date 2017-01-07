@@ -31,6 +31,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self commitInit];
 }
 
@@ -39,12 +40,24 @@
     self.layer.cornerRadius = self.frame.size.width * 0.5;
     self.layer.masksToBounds = YES;
     
+    [self addGesture];
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    
+    self.smallCircleView.backgroundColor = backgroundColor;
+    self.shapeLayer.fillColor = backgroundColor.CGColor;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
     self.smallCircleR = self.frame.size.width * 0.5;
     self.smallCircleView.bounds = self.bounds;
     self.smallCircleView.center = self.center;
     self.smallCircleView.layer.cornerRadius = self.smallCircleView.frame.size.width * 0.5;
-    
-    [self addGesture];
 }
 
 #pragma mark ----懒加载方法
